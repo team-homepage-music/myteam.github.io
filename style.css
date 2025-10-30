@@ -1,12 +1,14 @@
 :root {
-  --bg: #fdf2f4;
-  --text: #2b1d22;
-  --muted: #6d4a52;
-  --accent: #e11d48;
-  --accent-light: rgba(225, 29, 72, 0.12);
+  --bg: #fff9f5;
+  --text: #23191d;
+  --muted: #6f5c62;
+  --accent: #ff4d67;
+  --accent-alt: #ff8a3d;
+  --accent-light: rgba(255, 77, 103, 0.18);
   --surface: #ffffff;
-  --border: #f3c4cd;
-  --footer-bg: #2b1d22;
+  --border: #ffd3d9;
+  --footer-bg: #23191d;
+  --hero-gradient: linear-gradient(135deg, rgba(255, 77, 103, 0.2), rgba(255, 138, 61, 0.18));
 }
 
 * {
@@ -14,11 +16,19 @@
 }
 
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', sans-serif;
   margin: 0;
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+.logo {
+  font-family: 'Poppins', 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', sans-serif;
+  letter-spacing: 0.02em;
 }
 
 a {
@@ -38,6 +48,7 @@ a {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   z-index: 100;
+  box-shadow: 0 10px 24px rgba(35, 25, 29, 0.05);
 }
 
 .header-content {
@@ -92,14 +103,10 @@ section {
   padding: 5rem 0;
 }
 
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-
 .hero {
   padding-top: 6rem;
-  background: linear-gradient(135deg, rgba(225, 29, 72, 0.12), transparent);
+  background: var(--hero-gradient);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .hero-content {
@@ -111,7 +118,7 @@ section {
 
 .hero-subtitle {
   font-size: 0.95rem;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 0.75rem;
@@ -145,21 +152,21 @@ section {
 }
 
 .button.primary {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), var(--accent-alt));
   color: #fff;
-  box-shadow: 0 15px 30px rgba(225, 29, 72, 0.25);
+  box-shadow: 0 18px 36px rgba(255, 77, 103, 0.28);
 }
 
 .button.primary:hover,
 .button.primary:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 20px 36px rgba(225, 29, 72, 0.32);
+  box-shadow: 0 22px 42px rgba(255, 77, 103, 0.35);
 }
 
 .button.secondary {
   background: transparent;
   color: var(--text);
-  border-color: var(--border);
+  border-color: rgba(255, 77, 103, 0.3);
 }
 
 .button.secondary:hover,
@@ -174,7 +181,7 @@ section {
   align-items: center;
   justify-content: center;
   height: 240px;
-  background: var(--accent-light);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.6), rgba(255, 77, 103, 0.2));
   border-radius: 24px;
   position: relative;
   overflow: hidden;
@@ -191,13 +198,13 @@ section {
 }
 
 .hero-visual::before {
-  background: rgba(225, 29, 72, 0.24);
+  background: rgba(255, 77, 103, 0.24);
   top: -60px;
   right: -40px;
 }
 
 .hero-visual::after {
-  background: rgba(225, 29, 72, 0.16);
+  background: rgba(255, 138, 61, 0.2);
   bottom: -70px;
   left: -50px;
 }
@@ -215,12 +222,30 @@ section {
   font-size: 2rem;
   font-weight: 700;
   color: var(--accent);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 77, 103, 0.32);
 }
 
-.section-content p {
+.section-content > p {
   margin-bottom: 1.5rem;
   color: var(--muted);
+  max-width: 720px;
+}
+
+.section-title {
+  display: inline-block;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin-top: 0.75rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-alt));
 }
 
 .skills {
@@ -228,6 +253,14 @@ section {
   gap: 2rem;
   margin-top: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.skills > div {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  padding: 1.75rem;
+  border: 1px solid rgba(255, 77, 103, 0.14);
+  box-shadow: 0 20px 36px rgba(35, 25, 29, 0.05);
 }
 
 .skills h3 {
@@ -254,30 +287,58 @@ section {
 
 .project-card {
   background: var(--surface);
-  border: 1px solid rgba(225, 29, 72, 0.16);
-  border-radius: 18px;
-  padding: 2rem;
-  box-shadow: 0 24px 48px rgba(124, 16, 39, 0.05);
+  border: 1px solid rgba(255, 77, 103, 0.16);
+  border-radius: 20px;
+  padding: 2.25rem;
+  box-shadow: 0 28px 48px rgba(255, 77, 103, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .project-card:hover,
 .project-card:focus-within {
   transform: translateY(-6px);
-  box-shadow: 0 32px 56px rgba(124, 16, 39, 0.1);
-  border-color: rgba(225, 29, 72, 0.28);
+  box-shadow: 0 36px 60px rgba(255, 77, 103, 0.15);
+  border-color: rgba(255, 77, 103, 0.3);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(255, 77, 103, 0.15), rgba(255, 138, 61, 0.08));
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.project-card:hover::before,
+.project-card:focus-within::before {
+  opacity: 1;
 }
 
 .project-card h3 {
   margin-top: 0;
   margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.project-card p {
+  position: relative;
+  z-index: 1;
+  color: var(--muted);
 }
 
 .project-meta {
   font-size: 0.9rem;
-  color: var(--accent);
+  color: var(--accent-alt);
   margin-bottom: 1rem;
   letter-spacing: 0.02em;
+  position: relative;
+  z-index: 1;
 }
 
 .project-link {
@@ -287,6 +348,8 @@ section {
   margin-top: 1.5rem;
   font-weight: 600;
   color: var(--accent);
+  position: relative;
+  z-index: 1;
 }
 
 .project-link::after {
@@ -294,8 +357,18 @@ section {
   font-size: 0.9rem;
 }
 
+.music {
+  background: #fff;
+}
+
 .contact {
   text-align: center;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.9), rgba(255, 138, 61, 0.15));
+  border-top: 1px solid rgba(255, 77, 103, 0.15);
+}
+
+.contact .section-content {
+  max-width: 640px;
 }
 
 .contact-mail {
@@ -311,6 +384,16 @@ section {
   justify-content: center;
   gap: 1.5rem;
   color: var(--muted);
+}
+
+.social-links a {
+  color: inherit;
+  font-weight: 600;
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  color: var(--accent);
 }
 
 footer {

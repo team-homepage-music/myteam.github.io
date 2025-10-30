@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ホームページ</title>
+  <title>Hibiki Music</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-content">
-      <h1 class="logo">Hibiki Portfolio</h1>
+      <h1 class="logo">Hibiki Music</h1>
       <nav class="site-nav">
         <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Works</a>
+        <a href="#about">Profile</a>
+        <a href="#music">Music</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -23,15 +26,15 @@
     <section class="hero" id="hero">
       <div class="container hero-content">
         <div class="hero-text">
-          <p class="hero-subtitle">Web Developer / Designer</p>
-          <h2 class="hero-title">Hibiki</h2>
+          <p class="hero-subtitle">Singer-Songwriter / Guitarist</p>
+          <h2 class="hero-title">Hibiki Yoshida</h2>
           <p class="hero-description">
-            フロントエンドを中心に、ユーザー体験を高めるデザインと実装を行います。<br>
-            プロダクト志向の開発が得意で、スピード感のあるチームでの改善サイクルを回してきました。
+            夜の街をテーマにしたチルポップを中心に、日常の瞬間を切り取った楽曲を制作しています。<br>
+            アナログの温かさとエレクトロニカを掛け合わせたサウンドで、心地よい余韻を届けます。
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#projects">実績を見る</a>
-            <a class="button secondary" href="#contact">お問い合わせ</a>
+            <a class="button primary" href="#music">最新曲を聴く</a>
+            <a class="button secondary" href="#contact">出演依頼・お問い合わせ</a>
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
@@ -42,61 +45,60 @@
 
     <section class="about" id="about">
       <div class="container section-content">
-        <h2 class="section-title">自己紹介</h2>
+        <h2 class="section-title">プロフィール</h2>
         <p>
-          Web制作会社でのUI設計とフロントエンド開発を経て、現在はフリーランスとして活動中。
-          ReactやTypeScriptを使ったシングルページアプリケーションの開発を得意としています。
-          ユーザーリサーチからデザイン、実装、継続的な改善まで一貫したサポートが可能です。
+          東京出身のシンガーソングライター。バンド活動を経て、現在はソロで楽曲制作・ライブ出演を行っています。
+          海辺や夜景など、自然と都市が混じり合う時間帯からインスピレーションを受け、心に残るメロディを追い求めています。
+          自宅スタジオでのセルフプロデュースを中心に、映像クリエイターとのコラボレーションも積極的に行っています。
         </p>
         <div class="skills">
           <div>
-            <h3>得意領域</h3>
+            <h3>好きなジャンル</h3>
             <ul>
-              <li>UI/UX設計とプロトタイピング</li>
-              <li>React / Next.js を用いたフロントエンド開発</li>
-              <li>アクセシビリティを意識したマークアップ</li>
+              <li>Lo-fi / Chillhop / Bedroom Pop</li>
+              <li>City Pop と Jazz のクロスオーバー</li>
+              <li>アンビエントなインストゥルメンタル</li>
             </ul>
           </div>
           <div>
-            <h3>主要スキル</h3>
+            <h3>活動内容</h3>
             <ul>
-              <li>React / Next.js / TypeScript</li>
-              <li>Figma / Adobe XD / Illustrator</li>
-              <li>Node.js / GraphQL / Firebase</li>
+              <li>作詞・作曲、アレンジ、セルフレコーディング</li>
+              <li>ギター、ピアノ、サンプラーを使ったライブ演奏</li>
+              <li>映像・アートワークのディレクション</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="projects" id="projects">
+    <section class="music" id="music">
       <div class="container section-content">
-        <h2 class="section-title">実績</h2>
+        <h2 class="section-title">Music & Live</h2>
         <div class="project-grid">
           <article class="project-card">
-            <h3>TECH STARTUP LP</h3>
-            <p class="project-meta">役割: デザイン / フロントエンド開発</p>
+            <h3>NEON CITY EP</h3>
+            <p class="project-meta">Digital EP / 2024</p>
             <p>
-              BtoB向けSaaSのプロダクトローンチに合わせたランディングページを制作。
-              KPIである資料請求率を40%改善。
+              夜景のきらめきと深夜ドライブをイメージした全4曲構成のEP。シンセとギターが絡み合うサウンドが特徴です。
             </p>
-            <a class="project-link" href="https://example.com/project1" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+            <a class="project-link" href="https://example.com/neon-city" target="_blank" rel="noopener noreferrer">Streaming</a>
           </article>
           <article class="project-card">
-            <h3>教育系Webアプリ</h3>
-            <p class="project-meta">役割: UI設計 / 実装</p>
+            <h3>MIDNIGHT SESSION</h3>
+            <p class="project-meta">Live at Blue Note Tokyo</p>
             <p>
-              小学生向け学習アプリのUI刷新を担当。ゲーム性を取り入れたUIで、継続率を25%向上させました。
+              ジャズバンドとのセッションで再構築した既存曲を披露。即興から生まれるグルーヴをライブ収録しました。
             </p>
-            <a class="project-link" href="https://example.com/project2" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+            <a class="project-link" href="https://example.com/midnight-session" target="_blank" rel="noopener noreferrer">Watch</a>
           </article>
           <article class="project-card">
-            <h3>クリエイティブスタジオサイト</h3>
-            <p class="project-meta">役割: アートディレクション / コーディング</p>
+            <h3>Surfing on Notes</h3>
+            <p class="project-meta">Single / 2023</p>
             <p>
-              ブランドの持つ柔らかさを表現するため、タイポグラフィと余白を重視したデザインで構築しました。
+              波のゆらぎをテーマに制作したサマーシングル。MVは湘南で撮影し、爽やかな映像とともに話題になりました。
             </p>
-            <a class="project-link" href="https://example.com/project3" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+            <a class="project-link" href="https://example.com/surfing-on-notes" target="_blank" rel="noopener noreferrer">MV</a>
           </article>
         </div>
       </div>
@@ -106,13 +108,14 @@
       <div class="container section-content">
         <h2 class="section-title">お問い合わせ</h2>
         <p>
-          プロジェクトのご相談やお仕事のご依頼は、お気軽に下記のメールアドレスからご連絡ください。
+          ライブ出演や楽曲制作のご依頼、コラボレーションの相談などお気軽にご連絡ください。
+          個人のメッセージはSNSまたはメールにてお受けしています。
         </p>
-        <a class="contact-mail" href="mailto:hello@example.com">hello@example.com</a>
+        <a class="contact-mail" href="mailto:booking@hibiki-music.com">booking@hibiki-music.com</a>
         <div class="social-links">
-          <a href="https://github.com/example" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/example" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://twitter.com/example" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+          <a href="https://open.spotify.com/artist/example" target="_blank" rel="noopener noreferrer">Spotify</a>
+          <a href="https://www.youtube.com/@example" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.instagram.com/example" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
       </div>
     </section>
