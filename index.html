@@ -7,19 +7,114 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>ようこそ</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-content">
+      <h1 class="logo">Hibiki Portfolio</h1>
+      <nav class="site-nav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section>
-      <h2>紹介</h2>
-      <p>これはテスト用のトップページです。</p>
+    <section class="hero" id="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="hero-subtitle">Web Developer / Designer</p>
+          <h2 class="hero-title">Hibiki</h2>
+          <p class="hero-description">
+            フロントエンドを中心に、ユーザー体験を高めるデザインと実装を行います。<br>
+            プロダクト志向の開発が得意で、スピード感のあるチームでの改善サイクルを回してきました。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">実績を見る</a>
+            <a class="button secondary" href="#contact">お問い合わせ</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-avatar">HY</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container section-content">
+        <h2 class="section-title">自己紹介</h2>
+        <p>
+          Web制作会社でのUI設計とフロントエンド開発を経て、現在はフリーランスとして活動中。
+          ReactやTypeScriptを使ったシングルページアプリケーションの開発を得意としています。
+          ユーザーリサーチからデザイン、実装、継続的な改善まで一貫したサポートが可能です。
+        </p>
+        <div class="skills">
+          <div>
+            <h3>得意領域</h3>
+            <ul>
+              <li>UI/UX設計とプロトタイピング</li>
+              <li>React / Next.js を用いたフロントエンド開発</li>
+              <li>アクセシビリティを意識したマークアップ</li>
+            </ul>
+          </div>
+          <div>
+            <h3>主要スキル</h3>
+            <ul>
+              <li>React / Next.js / TypeScript</li>
+              <li>Figma / Adobe XD / Illustrator</li>
+              <li>Node.js / GraphQL / Firebase</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container section-content">
+        <h2 class="section-title">実績</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>TECH STARTUP LP</h3>
+            <p class="project-meta">役割: デザイン / フロントエンド開発</p>
+            <p>
+              BtoB向けSaaSのプロダクトローンチに合わせたランディングページを制作。
+              KPIである資料請求率を40%改善。
+            </p>
+            <a class="project-link" href="https://example.com/project1" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+          </article>
+          <article class="project-card">
+            <h3>教育系Webアプリ</h3>
+            <p class="project-meta">役割: UI設計 / 実装</p>
+            <p>
+              小学生向け学習アプリのUI刷新を担当。ゲーム性を取り入れたUIで、継続率を25%向上させました。
+            </p>
+            <a class="project-link" href="https://example.com/project2" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+          </article>
+          <article class="project-card">
+            <h3>クリエイティブスタジオサイト</h3>
+            <p class="project-meta">役割: アートディレクション / コーディング</p>
+            <p>
+              ブランドの持つ柔らかさを表現するため、タイポグラフィと余白を重視したデザインで構築しました。
+            </p>
+            <a class="project-link" href="https://example.com/project3" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container section-content">
+        <h2 class="section-title">お問い合わせ</h2>
+        <p>
+          プロジェクトのご相談やお仕事のご依頼は、お気軽に下記のメールアドレスからご連絡ください。
+        </p>
+        <a class="contact-mail" href="mailto:hello@example.com">hello@example.com</a>
+        <div class="social-links">
+          <a href="https://github.com/example" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/example" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://twitter.com/example" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+        </div>
+      </div>
     </section>
   </main>
 
