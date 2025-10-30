@@ -1,12 +1,12 @@
 :root {
-  --bg: #f5f6fa;
-  --text: #1f2933;
-  --muted: #52606d;
-  --accent: #2563eb;
-  --accent-light: rgba(37, 99, 235, 0.12);
+  --bg: #fdf2f4;
+  --text: #2b1d22;
+  --muted: #6d4a52;
+  --accent: #e11d48;
+  --accent-light: rgba(225, 29, 72, 0.12);
   --surface: #ffffff;
-  --border: #d9e2ec;
-  --footer-bg: #1f2933;
+  --border: #f3c4cd;
+  --footer-bg: #2b1d22;
 }
 
 * {
@@ -99,7 +99,7 @@ section {
 
 .hero {
   padding-top: 6rem;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), transparent);
+  background: linear-gradient(135deg, rgba(225, 29, 72, 0.12), transparent);
 }
 
 .hero-content {
@@ -147,13 +147,13 @@ section {
 .button.primary {
   background: var(--accent);
   color: #fff;
-  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 15px 30px rgba(225, 29, 72, 0.25);
 }
 
 .button.primary:hover,
 .button.primary:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 20px 36px rgba(37, 99, 235, 0.28);
+  box-shadow: 0 20px 36px rgba(225, 29, 72, 0.32);
 }
 
 .button.secondary {
@@ -191,13 +191,13 @@ section {
 }
 
 .hero-visual::before {
-  background: rgba(37, 99, 235, 0.2);
+  background: rgba(225, 29, 72, 0.24);
   top: -60px;
   right: -40px;
 }
 
 .hero-visual::after {
-  background: rgba(37, 99, 235, 0.1);
+  background: rgba(225, 29, 72, 0.16);
   bottom: -70px;
   left: -50px;
 }
@@ -254,18 +254,18 @@ section {
 
 .project-card {
   background: var(--surface);
-  border: 1px solid rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(225, 29, 72, 0.16);
   border-radius: 18px;
   padding: 2rem;
-  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 24px 48px rgba(124, 16, 39, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .project-card:hover,
 .project-card:focus-within {
   transform: translateY(-6px);
-  box-shadow: 0 32px 56px rgba(15, 23, 42, 0.08);
-  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow: 0 32px 56px rgba(124, 16, 39, 0.1);
+  border-color: rgba(225, 29, 72, 0.28);
 }
 
 .project-card h3 {
