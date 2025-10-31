@@ -364,7 +364,8 @@ img {
 .home-links {
   display: grid;
   gap: clamp(1rem, 3vw, 1.5rem);
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: 1fr;
+  justify-items: center;
 }
 
 .home-link {
