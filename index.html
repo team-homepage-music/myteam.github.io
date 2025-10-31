@@ -6,7 +6,7 @@
   <title>Sample Artist Site</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -19,11 +19,11 @@
       </button>
       <nav class="site-nav" id="site-nav">
         <a href="index.html#hero">Home</a>
-        <a href="index.html#news">News</a>
+        <a href="index.html#highlights">Highlights</a>
         <a href="about.html">About</a>
         <a href="works.html">Works</a>
-        <a href="index.html#release">Release</a>
         <a href="index.html#discography">Discography</a>
+        <a href="index.html#schedule">Schedule</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -32,176 +32,174 @@
 
   <main>
     <section class="hero" id="hero">
-      <div class="container hero-content">
-        <div class="hero-text">
-          <p class="hero-subtitle">Electronic Pop Artist</p>
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="hero-kicker">electronic sound collage</p>
           <h2 class="hero-title">Sample Artist</h2>
-          <p class="hero-description">
-            サンプルコンテンツ用のアーティストページです。架空のエレクトロポップアーティストを想定したテキストやレイアウトで、実際の人物や作品名は使用していません。
+          <p class="hero-intro">
+            想像上のアーティストによる実験的なサンプルサイトです。グルーヴとビジュアルの断片を織り交ぜ、夜を漂うような体験をイメージして構成しています。
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#release">サンプル音源を確認</a>
-            <a class="button secondary" href="#schedule">サンプルスケジュール</a>
+            <a class="button button-primary" href="#highlights">最新情報へ</a>
+            <a class="button button-ghost" href="works.html">作品一覧</a>
           </div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-avatar">SA</div>
+        <div class="hero-media" aria-hidden="true">
+          <div class="hero-circle"></div>
+          <div class="hero-stamp">SA</div>
         </div>
       </div>
     </section>
 
-    <section class="news" id="news">
-      <div class="container section-content">
-        <h2 class="section-title">News</h2>
-        <div class="news-list">
-          <article class="news-item">
-            <time datetime="2025-03-01">2025.03.01</time>
-            <h3>サンプルツアー「City Lights 2025」準備中</h3>
-            <p>
-              架空のホールツアー情報を掲載するためのサンプル項目です。テキストや日程はダミーとしてご利用ください。
-            </p>
-            <a class="news-link" href="https://example.com/news/sample-tour" target="_blank" rel="noopener noreferrer">サンプル詳細</a>
-          </article>
-          <article class="news-item">
-            <time datetime="2025-02-14">2025.02.14</time>
-            <h3>サンプルシングル「Midnight Sample」配信告知</h3>
-            <p>
-              新曲告知セクションのレイアウト確認用サンプルです。実際の楽曲名や関係者名は含まれていません。
-            </p>
-            <a class="news-link" href="https://example.com/news/sample-single" target="_blank" rel="noopener noreferrer">サンプルリンク</a>
-          </article>
-          <article class="news-item">
-            <time datetime="2025-01-20">2025.01.20</time>
-            <h3>サンプルタイアップ情報</h3>
-            <p>
-              タイアップ発表コンテンツを想定したサンプル文です。実在のブランド名や人物名は使用していません。
-            </p>
-            <a class="news-link" href="https://example.com/news/sample-tieup" target="_blank" rel="noopener noreferrer">サンプルページ</a>
-          </article>
+    <section class="highlights" id="highlights">
+      <div class="container highlights-content">
+        <div class="highlights-header">
+          <h2 class="section-heading">Highlights</h2>
+          <p class="section-subtext">スケッチとしてのニュースレター。架空のリリースや出演情報をダイジェストでまとめています。</p>
         </div>
-      </div>
-    </section>
-
-    <section class="release" id="release">
-      <div class="container release-content">
-        <div class="player-embed">
-          <iframe src="https://open.spotify.com/embed/track/7h4W3NPn4G3b6bXqef3nCl?utm_source=generator"
-            title="Spotifyプレイヤー"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
-        </div>
-        <div class="release-details">
-          <h2 class="section-title">Latest Release</h2>
-          <p class="release-intro">
-            デジタルシングル「Sample Lights」は、サイトデザイン検証用のダミータイトルです。サウンドの紹介文として任意のテキストを配置できることを示すサンプルコピーです。
-          </p>
-          <ul class="release-meta">
-            <li><span>Release:</span> 2025.02.14</li>
-            <li><span>Label:</span> Sample Label</li>
-            <li><span>Featuring:</span> Guest Artist (Sample)</li>
-          </ul>
-          <div class="release-actions">
-            <a class="button primary" href="https://example.com/sample-audio" target="_blank" rel="noopener noreferrer">音源サンプル</a>
-            <a class="button secondary" href="https://example.com/sample-video" target="_blank" rel="noopener noreferrer">動画サンプル</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="profile" id="profile">
-      <div class="container section-content">
-        <h2 class="section-title">Profile</h2>
-        <p>
-          ここでは架空のアーティストプロフィールを表現しています。活動拠点やジャンルなど、実際の情報に差し替える前提でご活用ください。ページ全体がサンプル構成であることを明確にするため、固有名詞は使用していません。
-        </p>
-        <div class="skills">
-          <div>
-            <h3>好きなジャンル</h3>
-            <ul>
-              <li>サンプルジャンル A</li>
-              <li>サンプルジャンル B</li>
-              <li>サンプルジャンル C</li>
-            </ul>
-          </div>
-          <div>
-            <h3>活動内容</h3>
-            <ul>
-              <li>サンプル制作ワークフロー</li>
-              <li>サンプルライブパフォーマンス</li>
-              <li>サンプルコラボレーション</li>
-            </ul>
-          </div>
+        <div class="highlight-grid">
+          <article class="highlight-card">
+            <header>
+              <p class="highlight-date">2025.03.01</p>
+              <h3>サンプルライブ「POLY CITY」準備中</h3>
+            </header>
+            <p>
+              都市の残響とドローンサウンドをテーマにしたライブを想定したサンプルです。会場や演出の設定は自由に書き換えてください。
+            </p>
+            <a class="text-link" href="https://example.com/news/sample-tour" target="_blank" rel="noopener noreferrer">ダミー詳細を見る</a>
+          </article>
+          <article class="highlight-card">
+            <header>
+              <p class="highlight-date">2025.02.14</p>
+              <h3>デジタルシングル「Midnight Sample」配信設定</h3>
+            </header>
+            <p>
+              ストリーミング配信に関する導線テスト用の文章です。実データに差し替える前提で、自由に調整してください。
+            </p>
+            <a class="text-link" href="https://example.com/news/sample-single" target="_blank" rel="noopener noreferrer">ダミー配信ページ</a>
+          </article>
+          <article class="highlight-card">
+            <header>
+              <p class="highlight-date">2025.01.20</p>
+              <h3>サンプルブランドとのコラボレーション</h3>
+            </header>
+            <p>
+              コラボレーション告知コンテンツ用のサンプルコピー。タイアップの概要やビジュアルの説明に置き換えてお使いください。
+            </p>
+            <a class="text-link" href="https://example.com/news/sample-tieup" target="_blank" rel="noopener noreferrer">コラボサンプル</a>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="discography" id="discography">
-      <div class="container section-content">
-        <h2 class="section-title">Discography Highlights</h2>
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>Sample EP 01</h3>
-            <p class="project-meta">EP / 2024</p>
-            <p>
-              架空のEP紹介文が入るサンプルです。実際の楽曲名やエピソードと置き換えてご利用ください。
-            </p>
-            <a class="project-link" href="https://example.com/sample-ep" target="_blank" rel="noopener noreferrer">Sample Link</a>
+      <div class="container discography-content">
+        <div class="discography-header">
+          <h2 class="section-heading">Discography</h2>
+          <p class="section-subtext">ジャケットアートや作品概要を差し替える想定のサンプルリストです。</p>
+        </div>
+        <div class="release-track">
+          <article class="release-card">
+            <p class="release-year">2025</p>
+            <h3>Sample Lights</h3>
+            <p>夜景の粒子を意識したエレクトロ・ポップEP。実データの入力例としてご活用ください。</p>
+            <a class="text-link" href="https://example.com/sample-ep" target="_blank" rel="noopener noreferrer">Streaming Sample</a>
           </article>
-          <article class="project-card">
-            <h3>Sample Live Session</h3>
-            <p class="project-meta">Live Recording / 2024</p>
-            <p>
-              ライブ映像やセッション音源を紹介するためのダミーテキストです。サウンドの特徴や見どころを自由に編集してください。
-            </p>
-            <a class="project-link" href="https://example.com/sample-live" target="_blank" rel="noopener noreferrer">Sample Link</a>
+          <article class="release-card">
+            <p class="release-year">2024</p>
+            <h3>Analog Fiction</h3>
+            <p>レトロ機材の質感をテーマにしたサンプル作品。ジャケット写真などに置き換えて使用できます。</p>
+            <a class="text-link" href="https://example.com/sample-analog" target="_blank" rel="noopener noreferrer">View Sample</a>
           </article>
-          <article class="project-card">
-            <h3>Sample Single</h3>
-            <p class="project-meta">Single / 2023</p>
-            <p>
-              シングルリリースの概要を掲載するためのサンプル文章です。制作背景やキービジュアルの説明などに差し替えられます。
-            </p>
-            <a class="project-link" href="https://example.com/sample-single" target="_blank" rel="noopener noreferrer">Sample Link</a>
+          <article class="release-card">
+            <p class="release-year">2023</p>
+            <h3>Reverb Diary</h3>
+            <p>日記のように断片を集めたサンプルアルバム。実際の楽曲クレジット等に差し替え可能です。</p>
+            <a class="text-link" href="https://example.com/sample-diary" target="_blank" rel="noopener noreferrer">Listen Mockup</a>
           </article>
+          <article class="release-card">
+            <p class="release-year">2022</p>
+            <h3>Satellite Bloom</h3>
+            <p>宇宙を漂う植物をモチーフにしたサンプルシングル。ライナーノーツや歌詞リンクを追加できます。</p>
+            <a class="text-link" href="https://example.com/sample-bloom" target="_blank" rel="noopener noreferrer">Sample Link</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="release-preview" id="release">
+      <div class="container release-preview-content">
+        <div class="preview-text">
+          <h2 class="section-heading">Latest Preview</h2>
+          <p>
+            サンプル音源の埋め込み枠です。YouTube や Spotify など任意のプレイヤーに置き換えてご利用ください。配信情報やクレジットも追記できます。
+          </p>
+          <ul class="meta-list">
+            <li><span>Release</span><span>2025.02.14</span></li>
+            <li><span>Label</span><span>Sample Label</span></li>
+            <li><span>Featuring</span><span>Guest Artist (Sample)</span></li>
+          </ul>
+        </div>
+        <div class="preview-player">
+          <iframe src="https://open.spotify.com/embed/track/7h4W3NPn4G3b6bXqef3nCl?utm_source=generator" title="Spotifyプレイヤー"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
       </div>
     </section>
 
     <section class="schedule" id="schedule">
-      <div class="container section-content">
-        <h2 class="section-title">Live Schedule</h2>
-        <p>
-          最新のライブ情報やイベント出演予定です。チケットリンクは順次更新していきます。
-        </p>
-        <div class="schedule-list">
-          <article class="schedule-item">
-            <h3>2025.03.08 Sat</h3>
-            <p class="schedule-venue">Sample Hall (Tokyo)</p>
-            <p class="schedule-note">サンプルライブ 01 の概要テキストが入ります。</p>
-            <a class="schedule-link" href="https://example.com/sample-ticket-01" target="_blank" rel="noopener noreferrer">サンプルリンク</a>
+      <div class="container schedule-content">
+        <h2 class="section-heading">Schedule</h2>
+        <p class="section-subtext">実際の公演情報が決まったらここに差し替えてください。現在はダミーの日程です。</p>
+        <div class="schedule-timeline">
+          <article class="timeline-item">
+            <p class="timeline-date">2025.03.08</p>
+            <div>
+              <h3>Sample Hall Tokyo</h3>
+              <p>「POLY CITY」ツアーの仮タイトル。詳細情報のトグルを追加するなど自由にアレンジ可能です。</p>
+            </div>
+            <a class="text-link" href="https://example.com/sample-ticket-01" target="_blank" rel="noopener noreferrer">Ticket Sample</a>
           </article>
-          <article class="schedule-item">
-            <h3>2025.04.12 Sat</h3>
-            <p class="schedule-venue">Sample Theater (Osaka)</p>
-            <p class="schedule-note">コラボイベントの説明などを入れるためのサンプル文です。</p>
-            <a class="schedule-link" href="https://example.com/sample-ticket-02" target="_blank" rel="noopener noreferrer">サンプルリンク</a>
+          <article class="timeline-item">
+            <p class="timeline-date">2025.04.12</p>
+            <div>
+              <h3>Sample Theater Osaka</h3>
+              <p>コラボレーションライブのサンプルテキスト。出演者やセッション内容を実際の情報に差し替えてください。</p>
+            </div>
+            <a class="text-link" href="https://example.com/sample-ticket-02" target="_blank" rel="noopener noreferrer">View Details</a>
           </article>
-          <article class="schedule-item">
-            <h3>2025.05.04 Sun</h3>
-            <p class="schedule-venue">Sample Festival (Online)</p>
-            <p class="schedule-note">配信ライブやフェス出演情報のダミーとしてご利用ください。</p>
-            <a class="schedule-link" href="https://example.com/sample-ticket-03" target="_blank" rel="noopener noreferrer">サンプルリンク</a>
+          <article class="timeline-item">
+            <p class="timeline-date">2025.05.04</p>
+            <div>
+              <h3>Sample Festival Online</h3>
+              <p>配信イベントの占位コンテンツです。タイムテーブルや視聴URLを追加するスペースとしてご活用ください。</p>
+            </div>
+            <a class="text-link" href="https://example.com/sample-ticket-03" target="_blank" rel="noopener noreferrer">Streaming Info</a>
           </article>
         </div>
       </div>
     </section>
 
+    <section class="visual-log" id="visual-log">
+      <div class="container visual-content">
+        <h2 class="section-heading">Visual Log</h2>
+        <p class="section-subtext">アートワークやライブ写真のダミー枠です。任意の画像に差し替えられるようプレースホルダーで構成しています。</p>
+        <div class="visual-grid">
+          <div class="visual-item">Artwork 01</div>
+          <div class="visual-item">Artwork 02</div>
+          <div class="visual-item">Artwork 03</div>
+          <div class="visual-item">Artwork 04</div>
+          <div class="visual-item">Artwork 05</div>
+          <div class="visual-item">Artwork 06</div>
+        </div>
+      </div>
+    </section>
+
     <section class="contact" id="contact">
-      <div class="container section-content">
-        <h2 class="section-title">お問い合わせ</h2>
-        <p>
-          ライブ出演や楽曲制作のご依頼、コラボレーションの相談などお気軽にご連絡ください。
-          個人のメッセージはSNSまたはメールにてお受けしています。
+      <div class="container contact-content">
+        <h2 class="section-heading">Contact</h2>
+        <p class="section-subtext">
+          サンプルフォームの代わりにメールアドレスとSNSリンクを掲載しています。問い合わせ窓口に合わせて編集してください。
         </p>
         <a class="contact-mail" href="mailto:sample-contact@example.com">sample-contact@example.com</a>
         <div class="social-links">
