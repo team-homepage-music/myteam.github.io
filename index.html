@@ -18,29 +18,111 @@
         <span class="nav-toggle-bar"></span>
       </button>
       <nav class="site-nav" id="site-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="index.html">Overview</a>
         <a href="works.html">Works</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
     <div class="nav-overlay" data-nav-overlay></div>
   </header>
 
-  <main class="home-menu">
-    <div class="container home-menu-container">
-      <div class="home-intro">
-        <p class="home-kicker">Sample Artist Site</p>
-        <h2 class="home-title">Select a Destination</h2>
-        <p class="home-text">架空のアーティストサイトのナビゲーションページです。下記リンクから各コンテンツへ移動してください。</p>
-      </div>
-      <div class="home-links">
-        <a class="home-link" href="about.html">About</a>
-        <a class="home-link" href="works.html">Works</a>
-        <a class="home-link" href="contact.html">Contact</a>
-      </div>
+  <main class="overview">
+    <div class="container overview-container">
+      <section class="org-hero">
+        <div class="org-identity">
+          <div class="org-avatar">SA</div>
+          <div>
+            <h2 class="org-name">Sample Artist Collective</h2>
+            <p class="org-tagline">音と映像の断片を組み合わせる架空のアーティストチームのポータルサイトです。</p>
+          </div>
+        </div>
+        <div class="org-actions">
+          <a class="button button-primary" href="works.html">View Works</a>
+          <a class="button button-ghost" href="contact.html">Contact</a>
+        </div>
+      </section>
+
+      <nav class="org-tabs">
+        <a class="org-tab is-active" href="index.html">Overview</a>
+        <a class="org-tab" href="works.html">Works</a>
+        <a class="org-tab" href="about.html">About</a>
+        <a class="org-tab" href="contact.html">Contact</a>
+      </nav>
+
+      <section class="overview-grid">
+        <div class="overview-main">
+          <section class="panel">
+            <h3 class="panel-title">Pinned Highlights</h3>
+            <div class="repo-grid">
+              <article class="repo-card">
+                <h4>sample-portfolio</h4>
+                <p class="repo-meta">HTML • CSS • JavaScript</p>
+                <p class="repo-description">架空のライブ向けワンページサイト。アニメーションやレスポンシブ対応のサンプルです。</p>
+                <div class="repo-tags">
+                  <span class="repo-tag">frontend</span>
+                  <span class="repo-tag">design</span>
+                </div>
+              </article>
+              <article class="repo-card">
+                <h4>sample-sound-library</h4>
+                <p class="repo-meta">Audio • Metadata</p>
+                <p class="repo-description">サンプル音源とメタデータ管理のためのプレースホルダー。実際のファイル情報に置き換えて使えます。</p>
+                <div class="repo-tags">
+                  <span class="repo-tag">audio</span>
+                  <span class="repo-tag">data</span>
+                </div>
+              </article>
+              <article class="repo-card">
+                <h4>sample-visual-kit</h4>
+                <p class="repo-meta">SVG • Motion</p>
+                <p class="repo-description">ビジュアル演出用のグラフィックテンプレート一式。ライブ機材での利用を想定したダミーです。</p>
+                <div class="repo-tags">
+                  <span class="repo-tag">visual</span>
+                  <span class="repo-tag">motion</span>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h3 class="panel-title">Latest Activity</h3>
+            <ul class="activity-list">
+              <li class="activity-item">
+                <time datetime="2025-03-01">2025-03-01</time>
+                <p>「POLY CITY」ツアーのセットリスト草案を追加しました。</p>
+              </li>
+              <li class="activity-item">
+                <time datetime="2025-02-19">2025-02-19</time>
+                <p>Sample Lights EP のアートワーク案をリポジトリへアップロードしました。</p>
+              </li>
+              <li class="activity-item">
+                <time datetime="2025-02-07">2025-02-07</time>
+                <p>オンライン配信向け音声プリセットを整備しました。</p>
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <aside class="overview-side">
+          <section class="panel">
+            <h3 class="panel-title">Quick Links</h3>
+            <ul class="link-list">
+              <li><span>Works</span><a class="text-link" href="works.html">Open</a></li>
+              <li><span>About</span><a class="text-link" href="about.html">Profile</a></li>
+              <li><span>Contact</span><a class="text-link" href="contact.html">Get in touch</a></li>
+            </ul>
+          </section>
+          <section class="panel">
+            <h3 class="panel-title">People</h3>
+            <ul class="people-list">
+              <li><span>Sample Artist</span><span>Owner</span></li>
+              <li><span>Guest Collaborator</span><span>Designer</span></li>
+            </ul>
+          </section>
+        </aside>
+      </section>
     </div>
-  </main>
   </main>
 
   <footer>

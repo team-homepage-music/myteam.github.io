@@ -18,30 +18,59 @@
         <span class="nav-toggle-bar"></span>
       </button>
       <nav class="site-nav" id="site-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="index.html">Overview</a>
         <a href="works.html">Works</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
     <div class="nav-overlay" data-nav-overlay></div>
   </header>
 
-  <main>
-    <section class="contact" id="contact">
-      <div class="container section-content">
-        <h2 class="section-title">Contact</h2>
-        <p>
-          こちらはサンプルの問い合わせページです。実際のメールアドレス、フォーム、SNSリンクなどに置き換えてご利用ください。
-        </p>
-        <a class="contact-mail" href="mailto:sample-contact@example.com">sample-contact@example.com</a>
-        <div class="social-links">
-          <a href="https://example.com/sample-spotify" target="_blank" rel="noopener noreferrer">Spotify</a>
-          <a href="https://example.com/sample-youtube" target="_blank" rel="noopener noreferrer">YouTube</a>
-          <a href="https://example.com/sample-instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+  <main class="page">
+    <div class="container page-container">
+      <section class="org-hero">
+        <div class="org-identity">
+          <div class="org-avatar">SA</div>
+          <div>
+            <h2 class="org-name">Contact</h2>
+            <p class="org-tagline">お問い合わせ先やSNSリンクなどをまとめるためのサンプルページです。</p>
+          </div>
         </div>
-      </div>
-    </section>
+        <div class="org-actions">
+          <a class="button button-primary" href="mailto:sample-contact@example.com">Email</a>
+          <a class="button button-ghost" href="works.html">Works</a>
+        </div>
+      </section>
+
+      <nav class="org-tabs">
+        <a class="org-tab" href="index.html">Overview</a>
+        <a class="org-tab" href="works.html">Works</a>
+        <a class="org-tab" href="about.html">About</a>
+        <a class="org-tab is-active" href="contact.html">Contact</a>
+      </nav>
+
+      <section class="page-section" id="contact">
+        <div class="page-header">
+          <h2 class="section-heading">Contact</h2>
+          <p class="section-subtext">こちらはサンプルの問い合わせページです。実際のメールアドレス、フォーム、SNSリンクなどに置き換えてご利用ください。</p>
+        </div>
+        <div class="page-grid">
+          <article class="page-card">
+            <h3>メール</h3>
+            <a class="text-link" href="mailto:sample-contact@example.com">sample-contact@example.com</a>
+          </article>
+          <article class="page-card">
+            <h3>SNS / Streaming</h3>
+            <ul class="page-list">
+              <li><a class="text-link" href="https://example.com/sample-spotify" target="_blank" rel="noopener noreferrer">Spotify</a></li>
+              <li><a class="text-link" href="https://example.com/sample-youtube" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+              <li><a class="text-link" href="https://example.com/sample-instagram" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer>

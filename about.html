@@ -18,30 +18,47 @@
         <span class="nav-toggle-bar"></span>
       </button>
       <nav class="site-nav" id="site-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="index.html">Overview</a>
         <a href="works.html">Works</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
     <div class="nav-overlay" data-nav-overlay></div>
   </header>
 
-  <main>
-    <section class="page-section" id="about">
-      <div class="container">
+  <main class="page">
+    <div class="container page-container">
+      <section class="org-hero">
+        <div class="org-identity">
+          <div class="org-avatar">SA</div>
+          <div>
+            <h2 class="org-name">About Sample Artist</h2>
+            <p class="org-tagline">アーティストの背景や制作スタイルなど、プロフィール情報を整理するサンプルです。</p>
+          </div>
+        </div>
+        <div class="org-actions">
+          <a class="button button-primary" href="works.html">Works</a>
+          <a class="button button-ghost" href="contact.html">Contact</a>
+        </div>
+      </section>
+
+      <nav class="org-tabs">
+        <a class="org-tab" href="index.html">Overview</a>
+        <a class="org-tab" href="works.html">Works</a>
+        <a class="org-tab is-active" href="about.html">About</a>
+        <a class="org-tab" href="contact.html">Contact</a>
+      </nav>
+
+      <section class="page-section" id="about">
         <div class="page-header">
           <h2 class="section-heading">About</h2>
-          <p class="section-subtext">
-            サンプルアーティストに関する背景情報を記載するためのテンプレートです。実際のプロフィールやインタビュー内容に置き換えてご利用ください。
-          </p>
+          <p class="section-subtext">このページはプロフィール情報を掲載するテンプレートです。実データに置き換えてご利用ください。</p>
         </div>
         <div class="page-grid">
           <article class="page-card">
             <h3>プロフィール概要</h3>
-            <p>
-              活動拠点や音楽性、インスピレーションになっている要素などをまとめる領域です。プレースホルダーとしてダミー文章を挿入しています。
-            </p>
+            <p>活動拠点や音楽性、インスピレーションになっている要素などをまとめる領域です。プレースホルダーとしてダミー文章を挿入しています。</p>
           </article>
           <article class="page-card">
             <h3>音楽的ルーツ</h3>
@@ -61,13 +78,11 @@
           </article>
           <article class="page-card">
             <h3>メディア / リンク</h3>
-            <p>
-              インタビューや掲載記事、SNSリンクなどを配置する想定のカードです。必要に応じてCTAボタンを追加してください。
-            </p>
+            <p>インタビューや掲載記事、SNSリンクなどを配置する想定のカードです。必要に応じてCTAボタンを追加してください。</p>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <footer>
