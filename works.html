@@ -7,13 +7,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-content">
       <h1 class="logo">Sample Artist</h1>
-      <nav class="site-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開閉">
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
         <a href="index.html#hero">Home</a>
         <a href="index.html#news">News</a>
         <a href="about.html">About</a>
@@ -24,6 +28,7 @@
         <a href="contact.html">Contact</a>
       </nav>
     </div>
+    <div class="nav-overlay" data-nav-overlay></div>
   </header>
 
   <main>
@@ -63,5 +68,6 @@
   <footer>
     <p>© 2025 Sample Artist. All rights reserved.</p>
   </footer>
+  <script src="assets/main.js" defer></script>
 </body>
 </html>

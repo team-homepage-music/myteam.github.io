@@ -59,6 +59,7 @@ a {
 .header-content {
   align-items: center;
   display: flex;
+  gap: 0.75rem;
   justify-content: space-between;
   padding: 1rem 0;
 }
@@ -68,6 +69,56 @@ a {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.nav-toggle {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  cursor: pointer;
+  display: none;
+  height: 44px;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  width: 44px;
+}
+
+.nav-toggle-bar,
+.nav-toggle-bar::before,
+.nav-toggle-bar::after {
+  background: currentColor;
+  border-radius: 999px;
+  height: 2px;
+  position: absolute;
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+  width: 24px;
+}
+
+.nav-toggle-bar::before,
+.nav-toggle-bar::after {
+  content: "";
+}
+
+.nav-toggle-bar::before {
+  top: -7px;
+}
+
+.nav-toggle-bar::after {
+  top: 7px;
+}
+
+.nav-toggle.is-active .nav-toggle-bar {
+  background: transparent;
+}
+
+.nav-toggle.is-active .nav-toggle-bar::before {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-active .nav-toggle-bar::after {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .site-nav {
@@ -98,6 +149,104 @@ a {
 .site-nav a:focus-visible::after,
 .site-nav a:hover::after {
   transform: scaleX(1);
+}
+
+.nav-overlay {
+  display: none;
+}
+
+.js .nav-toggle {
+  display: inline-flex;
+}
+
+.js .site-nav {
+  background: rgba(26, 19, 53, 0.94);
+  box-shadow: var(--shadow-strong);
+  flex-direction: column;
+  font-size: 1rem;
+  gap: 1.4rem;
+  height: 100vh;
+  justify-content: flex-start;
+  padding: 5rem 2.5rem 2rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  width: min(320px, 80%);
+  z-index: 120;
+}
+
+.js .site-nav a {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.js .site-nav a::after {
+  background: rgba(255, 255, 255, 0.7);
+  bottom: -0.4rem;
+}
+
+.js .site-nav.is-open {
+  transform: translateX(0);
+}
+
+.js .nav-overlay {
+  background: rgba(17, 12, 32, 0.45);
+  display: block;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  transition: opacity 0.3s ease;
+  z-index: 110;
+}
+
+.js .nav-overlay.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.js body.nav-open {
+  overflow: hidden;
+}
+
+@media (min-width: 960px) {
+  .js .nav-toggle {
+    display: none;
+  }
+
+  .js .site-nav {
+    background: transparent;
+    box-shadow: none;
+    flex-direction: row;
+    font-size: 0.95rem;
+    gap: 1.4rem;
+    height: auto;
+    margin-left: auto;
+    padding: 0;
+    position: static;
+    transform: none;
+    width: auto;
+  }
+
+  .js .site-nav a {
+    color: var(--muted);
+    font-size: inherit;
+  }
+
+  .js .site-nav a::after {
+    background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+    bottom: -0.25rem;
+  }
+
+  .js .nav-overlay {
+    display: none;
+  }
+
+  .js body.nav-open {
+    overflow: auto;
+  }
 }
 
 main {
@@ -649,22 +798,22 @@ footer {
     gap: 0.75rem;
   }
 
-  .site-nav {
+  html:not(.js) .site-nav {
     gap: 1rem;
   }
 }
 
 @media (max-width: 720px) {
-  .site-header {
+  html:not(.js) .site-header {
     position: static;
   }
 
-  .header-content {
+  html:not(.js) .header-content {
     flex-direction: column;
     gap: 0.6rem;
   }
 
-  .site-nav {
+  html:not(.js) .site-nav {
     flex-wrap: wrap;
     gap: 0.8rem 1.2rem;
     justify-content: center;
