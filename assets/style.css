@@ -1,6 +1,6 @@
 :root {
   --bg: #c1121f;
-  --bg-alt: #c1121f;
+  --bg-alt: rgb(193, 18, 31);
   --ink: #0f0f0f;
   --muted: #2f2f2f;
   --accent: #ffffff;
@@ -202,7 +202,7 @@ img {
 .js .nav-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(228, 10, 10, 0.3);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -374,7 +374,7 @@ img {
   place-items: center;
   padding: 1.4rem 1.2rem;
   border-radius: 18px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(193, 18, 31);
   background: #ffffff;
   font-family: "Space Grotesk", sans-serif;
   font-size: 1rem;
@@ -388,7 +388,7 @@ img {
 .home-link:focus-visible {
   transform: translateY(-4px);
   box-shadow: var(--shadow-soft);
-  border-color: rgba(0, 0, 0, 0.35);
+  border-color: rgba(193, 18, 31);
 }
 
 .text-link {
@@ -417,8 +417,8 @@ footer {
 .page-section {
   padding: clamp(4rem, 9vw, 6rem) 0;
   background: rgba(26, 4, 6, 0.82);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(193, 18, 31);
+  border-bottom: 1px solid rgba(193, 18, 31);
 }
 
 .page-header {
@@ -435,7 +435,7 @@ footer {
 
 .page-card {
   background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(193, 18, 31);
   border-radius: 18px;
   padding: 1.8rem;
   display: grid;
