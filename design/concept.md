@@ -20,12 +20,7 @@
 - 日本語補完: ヒラギノ角ゴ / 游ゴシック / Noto Sans JP
 
 ## 構造案
-1. Hero / Key Visual
-2. Highlights (最新情報ダイジェスト)
-3. Discography (横スクロール型リスト)
-4. Release Preview (プレイヤー埋め込み)
-5. Schedule (タイムライン)
-6. Visual Log (ギャラリー)
-7. Contact
+1. Home = 全画面メニュー（スクロールなし）
+2. About / Works / Contact = サブページで詳細情報
 
 実案件では各セクションごとに具体的なコンテンツ、モジュール構成、レスポンシブ対応の方針を追記してください。
