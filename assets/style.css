@@ -330,8 +330,8 @@ img {
   display: grid;
   gap: clamp(2rem, 6vw, 3rem);
   padding: clamp(3rem, 8vw, 4rem) clamp(2rem, 6vw, 4rem);
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid var(--line);
+  background: rgba(36, 6, 10, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 28px;
   box-shadow: var(--shadow-soft);
 }
@@ -346,7 +346,7 @@ img {
   font-size: 0.72rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-alt);
 }
 
 .home-title {
@@ -372,8 +372,8 @@ img {
   place-items: center;
   padding: 1.4rem 1.2rem;
   border-radius: 18px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(31, 4, 7, 0.92);
   font-family: "Space Grotesk", sans-serif;
   font-size: 1rem;
   letter-spacing: 0.22em;
@@ -385,7 +385,7 @@ img {
 .home-link:focus-visible {
   transform: translateY(-4px);
   box-shadow: var(--shadow-soft);
-  border-color: rgba(26, 26, 26, 0.2);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 .text-link {
@@ -409,13 +409,13 @@ footer {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(26, 26, 26, 0.6);
+  color: rgba(244, 244, 244, 0.45);
 }
 .page-section {
   padding: clamp(4rem, 9vw, 6rem) 0;
-  background: rgba(255, 255, 255, 0.75);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  background: rgba(26, 4, 6, 0.82);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .page-header {
@@ -431,8 +431,8 @@ footer {
 }
 
 .page-card {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--line);
+  background: rgba(20, 3, 4, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 18px;
   padding: 1.8rem;
   display: grid;
