@@ -71,7 +71,16 @@ img {
 }
 
 .nav-has-submenu > span {
-  cursor: default;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  user-select: none;
+}
+
+.nav-has-submenu > span::after {
+  content: "▾";
+  font-size: 0.7rem;
 }
 
 .nav-submenu {
