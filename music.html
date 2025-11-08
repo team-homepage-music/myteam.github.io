@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Music 作品② | 戸田</title>
-  <meta name="description" content="Music work 2 photo.">
+  <title>Music Works | 戸田</title>
+  <meta name="description" content="Music works overview">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="site">
@@ -13,7 +13,7 @@
       <a class="brandmark" href="index.html">TODA</a>
       <nav class="primary-nav" aria-label="main navigation">
         <a href="profile.html">Profile</a>
-        <div class="nav-item nav-has-submenu"><span tabindex="0">Music</span><div class="nav-submenu"><a href="music-work-1.html">作品①</a><a href="music-work-2.html" aria-current="page">作品②</a></div></div>
+        <div class="nav-item nav-has-submenu"><span tabindex="0">Music</span><div class="nav-submenu"><a href="music.html#work-1" aria-current="page">作品①</a><a href="music.html#work-2">作品②</a></div></div>
         <div class="nav-item nav-has-submenu"><span tabindex="0">Art</span><div class="nav-submenu"><a href="art-work-1.html">作品①</a><a href="art-work-2.html">作品②</a></div></div>
         <a href="papers.html">Papers</a>
         <a href="patents.html">Patents</a>
@@ -26,14 +26,26 @@
   </header>
 
   <main class="page">
-    <figure>
-      <img src="assets/images/works/work-2.jpg" alt="Music work 2">
-      <figcaption>Music 作品② / 2023</figcaption>
-    </figure>
+    <section id="work-1">
+      <figure>
+        <img src="assets/images/works/work-1.jpg" alt="Music work 1">
+        <figcaption>Music 作品① / 2024</figcaption>
+      </figure>
+      <div class="description" data-md="content/music/music.md" data-md-key="work-1"></div>
+    </section>
+
+    <section id="work-2">
+      <figure>
+        <img src="assets/images/works/work-2.jpg" alt="Music work 2">
+        <figcaption>Music 作品② / 2023</figcaption>
+      </figure>
+      <div class="description" data-md="content/music/music.md" data-md-key="work-2"></div>
+    </section>
   </main>
 
   <footer class="global-footer">
     <p>© 2025 Masato Toda. All rights reserved.</p>
   </footer>
+  <script src="assets/markdown.js" defer></script>
 </body>
 </html>
