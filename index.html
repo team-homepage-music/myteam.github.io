@@ -3,101 +3,164 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>戸田 | Official Site</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
+  <title>戸田 | Artist Portfolio</title>
+  <meta name="description" content="Audiovisual artist portfolio skeleton site.">
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body class="site site--home">
+<body class="site">
   <header class="global-header">
     <div class="global-header__inner">
-      <a class="brandmark" href="index.html">TODA</a>
+      <a class="brandmark" href="#profile">TODA</a>
       <nav class="primary-nav" aria-label="主要ナビゲーション">
-        <a href="about.html">Info</a>
-        <a href="works.html">Works</a>
-        <a href="about.html#profile">Profile</a>
-        <a href="contact.html">Contact</a>
+        <a href="#profile">Profile</a>
+        <a href="#works">Works</a>
+        <a href="#schedule">Upcoming Schedule</a>
+        <a href="#listen">Listen</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <div class="header-meta">
-        <span>Tokyo / Audiovisual</span>
-        <span>JP + Global</span>
-      </div>
+      <button class="menu-toggle" type="button" aria-label="メニュー" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
   <main class="page">
-    <section class="hero">
-      <div class="hero__content">
-        <p class="hero__kicker">Audiovisual Narrative</p>
-        <h1>Sound + Light Experiments by 戸田</h1>
-        <p>
-          都市の記憶と人の動きをトリガーにしたサウンド、映像、光のインスタレーションを制作。ライブ演出からギャラリー展示まで横断的に活動しています。
-        </p>
-        <div class="hero__cta">
-          <a class="button" href="works.html">最新プロジェクト</a>
-          <a class="button button--ghost" href="contact.html">出演・制作のご相談</a>
+    <section id="profile" class="page-section">
+      <div class="section-heading">
+        <p class="eyebrow">Profile</p>
+        <h1>Artist Profile</h1>
+        <p>写真と文章は準備中です。ポートレートと紹介テキストは今後追加予定。</p>
+      </div>
+      <div class="profile-layout">
+        <figure class="profile-photo">
+          <img src="assets/images/portrait.jpg" alt="Artist portrait placeholder">
+          <figcaption>Upcoming</figcaption>
+        </figure>
+        <div class="profile-text">
+          <p>Upcoming — このエリアにはプロフィール文章と関連情報が入ります。現在はプレースホルダとして空の枠のみを表示しています。</p>
         </div>
       </div>
-      <ul class="hero-links" aria-label="セクション捷径">
-        <li>
-          <span>01</span>
-          <div>
-            <p>Info</p>
-            <a href="about.html">活動背景とコンセプト</a>
-          </div>
-        </li>
-        <li>
-          <span>02</span>
-          <div>
-            <p>Works</p>
-            <a href="works.html">代表作・ディスコグラフィ</a>
-          </div>
-        </li>
-        <li>
-          <span>03</span>
-          <div>
-            <p>Contact</p>
-            <a href="contact.html">出演・制作依頼</a>
-          </div>
-        </li>
-      </ul>
     </section>
 
-    <section class="updates" aria-labelledby="updates-title">
+    <section id="works" class="page-section works">
       <div class="section-heading">
-        <p class="eyebrow">News</p>
-        <h2 id="updates-title">最新情報</h2>
+        <p class="eyebrow">Works</p>
+        <h2>カテゴリ一覧</h2>
+        <p>Music / Art は同ページ内右ペインに詳細を表示します。他カテゴリはプレースホルダです。</p>
       </div>
-      <ul class="updates__list">
-        <li>
-          <p class="updates__date">2024.12.02</p>
-          <p class="updates__text">新作インスタレーション「光暈の地図」を渋谷のギャラリーにて公開予定。</p>
-        </li>
-        <li>
-          <p class="updates__date">2024.11.18</p>
-          <p class="updates__text">オーディオビジュアルライブ「Echo Drift」アジアツアー決定。</p>
-        </li>
-        <li>
-          <p class="updates__date">2024.10.03</p>
-          <p class="updates__text">建築誌『FRAME』に制作プロセスのインタビューが掲載されました。</p>
-        </li>
-      </ul>
+      <div class="works-filters" role="tablist" aria-label="Works categories">
+        <button type="button" role="tab" aria-selected="true" data-category="music">Music</button>
+        <button type="button" role="tab" aria-selected="false" data-category="art">Art</button>
+        <button type="button" role="tab" aria-selected="false" data-category="papers">Papers</button>
+        <button type="button" role="tab" aria-selected="false" data-category="patents">Patents</button>
+        <button type="button" role="tab" aria-selected="false" data-category="tonkotsu">豚骨ホームラン</button>
+        <button type="button" role="tab" aria-selected="false" data-category="others">Others</button>
+      </div>
+      <div class="works-layout">
+        <div class="works-list" id="work-list" aria-live="polite">
+          <div class="placeholder-card">Loading works…</div>
+        </div>
+        <aside class="works-detail" id="work-detail" aria-live="polite">
+          <p class="works-detail__label">Detail</p>
+          <div class="works-detail__body">
+            <p>作品を選択すると詳細がここに表示されます。</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="schedule" class="page-section">
+      <div class="section-heading">
+        <p class="eyebrow">Upcoming Schedule</p>
+        <h2>公開予定</h2>
+        <p>スケジュールは現在準備中です。</p>
+      </div>
+      <div class="placeholder-card">Upcoming</div>
+    </section>
+
+    <section id="listen" class="page-section listen">
+      <div class="section-heading">
+        <p class="eyebrow">Listen</p>
+        <h2>Streaming Links</h2>
+      </div>
+      <div class="listen-grid">
+        <a class="listen-button" href="https://example.com/soundcloud" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+        <a class="listen-button" href="https://example.com/apple-music" target="_blank" rel="noopener noreferrer">Apple Music</a>
+        <a class="listen-button" href="https://example.com/spotify" target="_blank" rel="noopener noreferrer">Spotify</a>
+        <a class="listen-button" href="https://example.com/bandcamp" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+      </div>
+    </section>
+
+    <section id="blog" class="page-section blog">
+      <div class="section-heading">
+        <p class="eyebrow">Blog</p>
+        <h2>Latest Notes</h2>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <p class="blog-card__date">2024.11.30</p>
+          <h3>スタジオアップデート</h3>
+          <p>新しいインスタレーションの試作についてのメモ。音響と照明の同期テストを実施中。</p>
+        </article>
+        <article class="blog-card">
+          <p class="blog-card__date">2024.10.12</p>
+          <h3>旅のスケッチ</h3>
+          <p>北欧で収録したフィールドレコーディングと、その後の編集工程の記録。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="page-section contact">
+      <div class="section-heading">
+        <p class="eyebrow">Contact</p>
+        <h2>お問い合わせ</h2>
+        <p>フォーム送信は後日実装予定です。現在はダミー送信が行われます。</p>
+      </div>
+      <form id="contact-form" class="contact-form" novalidate>
+        <label>
+          <span>お名前 *</span>
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          <span>メールアドレス *</span>
+          <input type="email" name="email" required inputmode="email">
+        </label>
+        <label>
+          <span>メッセージ *</span>
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button type="submit">送信</button>
+        <p class="contact-form__status" role="status" aria-live="polite"></p>
+      </form>
     </section>
   </main>
 
   <footer class="global-footer">
     <div class="global-footer__inner">
-      <ul class="footer-links">
-        <li><a href="https://www.youtube.com/@toda-studio" target="_blank" rel="noopener noreferrer">YouTube</a></li>
-        <li><a href="https://www.instagram.com/toda.studio" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        <li><a href="https://open.spotify.com/artist/toda" target="_blank" rel="noopener noreferrer">Spotify</a></li>
-        <li><a href="https://linktr.ee/toda-studio" target="_blank" rel="noopener noreferrer">Linktree</a></li>
-      </ul>
       <p>© 2025 戸田. All rights reserved.</p>
     </div>
   </footer>
+
+  <div class="sheet-overlay" data-sheet-overlay hidden></div>
+  <div class="bottom-sheet" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title" aria-hidden="true" hidden>
+    <div class="bottom-sheet__header">
+      <p id="mobile-menu-title">Menu</p>
+      <button type="button" data-sheet-close aria-label="閉じる">×</button>
+    </div>
+    <nav class="bottom-sheet__nav">
+      <a href="#profile">Profile</a>
+      <a href="#works">Works</a>
+      <a href="#schedule">Upcoming Schedule</a>
+      <a href="#listen">Listen</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
   <script src="assets/main.js" defer></script>
 </body>
 </html>
