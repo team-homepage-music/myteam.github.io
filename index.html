@@ -3,48 +3,100 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>戸田 | Portfolio Site</title>
+  <title>戸田 | Official Site</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-  <header class="site-header">
-    <div class="container header-content">
-      <h1 class="logo">戸田</h1>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開閉">
-        <span class="nav-toggle-bar"></span>
-      </button>
-      <nav class="site-nav" id="site-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+<body class="site site--home">
+  <header class="global-header">
+    <div class="global-header__inner">
+      <a class="brandmark" href="index.html">TODA</a>
+      <nav class="primary-nav" aria-label="主要ナビゲーション">
+        <a href="about.html">Info</a>
         <a href="works.html">Works</a>
+        <a href="about.html#profile">Profile</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <div class="header-meta">
+        <span>Tokyo / Audiovisual</span>
+        <span>JP + Global</span>
+      </div>
     </div>
-    <div class="nav-overlay" data-nav-overlay></div>
   </header>
 
-  <main class="home-menu">
-    <div class="container home-menu-container">
-      <div class="home-intro">
-        <p class="home-kicker">戸田 / Audiovisual Artist</p>
-        <h2 class="home-title">ポートフォリオナビゲーション</h2>
-        <p class="home-text">東京を拠点にサウンドと映像を横断するクリエイター・戸田の活動紹介サイトです。下記リンクから各セクションへどうぞ。</p>
+  <main class="page">
+    <section class="hero">
+      <div class="hero__content">
+        <p class="hero__kicker">Audiovisual Narrative</p>
+        <h1>Sound + Light Experiments by 戸田</h1>
+        <p>
+          都市の記憶と人の動きをトリガーにしたサウンド、映像、光のインスタレーションを制作。ライブ演出からギャラリー展示まで横断的に活動しています。
+        </p>
+        <div class="hero__cta">
+          <a class="button" href="works.html">最新プロジェクト</a>
+          <a class="button button--ghost" href="contact.html">出演・制作のご相談</a>
+        </div>
       </div>
-      <div class="home-links">
-        <a class="home-link" href="about.html">About</a>
-        <a class="home-link" href="works.html">Works</a>
-        <a class="home-link" href="contact.html">Contact</a>
+      <ul class="hero-links" aria-label="セクション捷径">
+        <li>
+          <span>01</span>
+          <div>
+            <p>Info</p>
+            <a href="about.html">活動背景とコンセプト</a>
+          </div>
+        </li>
+        <li>
+          <span>02</span>
+          <div>
+            <p>Works</p>
+            <a href="works.html">代表作・ディスコグラフィ</a>
+          </div>
+        </li>
+        <li>
+          <span>03</span>
+          <div>
+            <p>Contact</p>
+            <a href="contact.html">出演・制作依頼</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="updates" aria-labelledby="updates-title">
+      <div class="section-heading">
+        <p class="eyebrow">News</p>
+        <h2 id="updates-title">最新情報</h2>
       </div>
-    </div>
-  </main>
+      <ul class="updates__list">
+        <li>
+          <p class="updates__date">2024.12.02</p>
+          <p class="updates__text">新作インスタレーション「光暈の地図」を渋谷のギャラリーにて公開予定。</p>
+        </li>
+        <li>
+          <p class="updates__date">2024.11.18</p>
+          <p class="updates__text">オーディオビジュアルライブ「Echo Drift」アジアツアー決定。</p>
+        </li>
+        <li>
+          <p class="updates__date">2024.10.03</p>
+          <p class="updates__text">建築誌『FRAME』に制作プロセスのインタビューが掲載されました。</p>
+        </li>
+      </ul>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2025 戸田. All rights reserved.</p>
+  <footer class="global-footer">
+    <div class="global-footer__inner">
+      <ul class="footer-links">
+        <li><a href="https://www.youtube.com/@toda-studio" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><a href="https://www.instagram.com/toda.studio" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://open.spotify.com/artist/toda" target="_blank" rel="noopener noreferrer">Spotify</a></li>
+        <li><a href="https://linktr.ee/toda-studio" target="_blank" rel="noopener noreferrer">Linktree</a></li>
+      </ul>
+      <p>© 2025 戸田. All rights reserved.</p>
+    </div>
   </footer>
   <script src="assets/main.js" defer></script>
 </body>
