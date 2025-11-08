@@ -8,16 +8,21 @@
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body class="site">
+<body class="site" data-page="home">
   <header class="global-header">
     <div class="global-header__inner">
-      <a class="brandmark" href="#profile">TODA</a>
+      <a class="brandmark" href="index.html">TODA</a>
       <nav class="primary-nav" aria-label="主要ナビゲーション">
-        <a href="#profile">Profile</a>
-        <a href="#works">Works</a>
-        <a href="#schedule">Upcoming Schedule</a>
-        <a href="#listen">Listen</a>
-        <a href="#contact">Contact</a>
+        <a href="profile.html">Profile</a>
+        <a href="works-music.html">Works / Music</a>
+        <a href="works-art.html">Works / Art</a>
+        <a href="papers.html">Papers</a>
+        <a href="patents.html">Patents</a>
+        <a href="tonkotsu.html">豚骨ホームラン</a>
+        <a href="others.html">Others</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="listen.html">Listen</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <button class="menu-toggle" type="button" aria-label="メニュー" aria-controls="mobile-menu" aria-expanded="false">
         <span></span>
@@ -28,94 +33,46 @@
   </header>
 
   <main class="page">
-    <section id="profile" class="page-section">
-      <div class="section-heading">
-        <p class="eyebrow">Profile</p>
-        <h1>Artist Profile</h1>
-        <p>写真と文章は準備中です。ポートレートと紹介テキストは今後追加予定。</p>
-      </div>
-      <div class="profile-layout">
-        <figure class="profile-photo">
-          <img src="assets/images/portrait.jpg" alt="Artist portrait placeholder">
-          <figcaption>Upcoming</figcaption>
-        </figure>
-        <div class="profile-text">
-          <p>Upcoming — このエリアにはプロフィール文章と関連情報が入ります。現在はプレースホルダとして空の枠のみを表示しています。</p>
+    <section class="page-section landing-hero">
+      <div>
+        <p class="eyebrow">Artist Portfolio</p>
+        <h1>Sound + Light Experiments by 戸田</h1>
+        <p>
+          モノトーン基調の初期骨組みサイトです。各リンクからプロフィールや作品カテゴリ、資料ページへ遷移できます。
+        </p>
+        <div class="landing-hero__cta">
+          <a class="listen-button" href="profile.html">View Profile</a>
+          <a class="listen-button" href="works-music.html">Explore Works</a>
         </div>
       </div>
-    </section>
-
-    <section id="works" class="page-section works">
-      <div class="section-heading">
-        <p class="eyebrow">Works</p>
-        <h2>カテゴリ一覧</h2>
-        <p>Music / Art は同ページ内右ペインに詳細を表示します。他カテゴリはプレースホルダです。</p>
-      </div>
-      <div class="works-filters" role="tablist" aria-label="Works categories">
-        <button type="button" role="tab" aria-selected="true" data-category="music">Music</button>
-        <button type="button" role="tab" aria-selected="false" data-category="art">Art</button>
-        <button type="button" role="tab" aria-selected="false" data-category="papers">Papers</button>
-        <button type="button" role="tab" aria-selected="false" data-category="patents">Patents</button>
-        <button type="button" role="tab" aria-selected="false" data-category="tonkotsu">豚骨ホームラン</button>
-        <button type="button" role="tab" aria-selected="false" data-category="others">Others</button>
-      </div>
-      <div class="works-layout">
-        <div class="works-list" id="work-list" aria-live="polite">
-          <div class="placeholder-card">Loading works…</div>
-        </div>
-        <aside class="works-detail" id="work-detail" aria-live="polite">
-          <p class="works-detail__label">Detail</p>
-          <div class="works-detail__body">
-            <p>作品を選択すると詳細がここに表示されます。</p>
-          </div>
-        </aside>
+      <div class="landing-hero__card">
+        <p class="eyebrow">Overview</p>
+        <p>ナビゲーション項目：</p>
+        <ul style="margin:0;padding-left:1.2rem;color:var(--muted);">
+          <li>Profile / Works（Music, Art）</li>
+          <li>Papers / Patents / 豚骨ホームラン / Others</li>
+          <li>Schedule / Listen / Contact</li>
+        </ul>
       </div>
     </section>
 
-    <section id="schedule" class="page-section">
+    <section class="page-section">
       <div class="section-heading">
-        <p class="eyebrow">Upcoming Schedule</p>
-        <h2>公開予定</h2>
-        <p>スケジュールは現在準備中です。</p>
+        <p class="eyebrow">Quick Links</p>
+        <h2>Goto Pages</h2>
       </div>
-      <div class="placeholder-card">Upcoming</div>
-    </section>
-
-    <section id="listen" class="page-section listen">
-      <div class="section-heading">
-        <p class="eyebrow">Listen</p>
-        <h2>Streaming Links</h2>
+      <div class="link-grid">
+        <a class="link-card" href="profile.html">Profile</a>
+        <a class="link-card" href="works-music.html">Works / Music</a>
+        <a class="link-card" href="works-art.html">Works / Art</a>
+        <a class="link-card" href="papers.html">Papers</a>
+        <a class="link-card" href="patents.html">Patents</a>
+        <a class="link-card" href="tonkotsu.html">豚骨ホームラン</a>
+        <a class="link-card" href="others.html">Others</a>
+        <a class="link-card" href="schedule.html">Schedule</a>
+        <a class="link-card" href="listen.html">Listen</a>
+        <a class="link-card" href="contact.html">Contact</a>
       </div>
-      <div class="listen-grid">
-        <a class="listen-button" href="https://example.com/soundcloud" target="_blank" rel="noopener noreferrer">SoundCloud</a>
-        <a class="listen-button" href="https://example.com/apple-music" target="_blank" rel="noopener noreferrer">Apple Music</a>
-        <a class="listen-button" href="https://example.com/spotify" target="_blank" rel="noopener noreferrer">Spotify</a>
-        <a class="listen-button" href="https://example.com/bandcamp" target="_blank" rel="noopener noreferrer">Bandcamp</a>
-      </div>
-    </section>
-
-    <section id="contact" class="page-section contact">
-      <div class="section-heading">
-        <p class="eyebrow">Contact</p>
-        <h2>お問い合わせ</h2>
-        <p>フォーム送信は後日実装予定です。現在はダミー送信が行われます。</p>
-      </div>
-      <form id="contact-form" class="contact-form" novalidate>
-        <label>
-          <span>お名前 *</span>
-          <input type="text" name="name" required>
-        </label>
-        <label>
-          <span>メールアドレス *</span>
-          <input type="email" name="email" required inputmode="email">
-        </label>
-        <label>
-          <span>メッセージ *</span>
-          <textarea name="message" rows="4" required></textarea>
-        </label>
-        <button type="submit">送信</button>
-        <p class="contact-form__status" role="status" aria-live="polite"></p>
-      </form>
     </section>
   </main>
 
@@ -132,11 +89,17 @@
       <button type="button" data-sheet-close aria-label="閉じる">×</button>
     </div>
     <nav class="bottom-sheet__nav">
-      <a href="#profile">Profile</a>
-      <a href="#works">Works</a>
-      <a href="#schedule">Upcoming Schedule</a>
-      <a href="#listen">Listen</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="works-music.html">Works / Music</a>
+      <a href="works-art.html">Works / Art</a>
+      <a href="papers.html">Papers</a>
+      <a href="patents.html">Patents</a>
+      <a href="tonkotsu.html">豚骨ホームラン</a>
+      <a href="others.html">Others</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="listen.html">Listen</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 

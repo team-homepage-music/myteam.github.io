@@ -30,225 +30,8 @@
     ]
   };
 
-  const categories = [
-    { id: 'music', label: 'Music', type: 'list' },
-    { id: 'art', label: 'Art', type: 'list' },
-    { id: 'papers', label: 'Papers', type: 'upcoming' },
-    { id: 'patents', label: 'Patents', type: 'upcoming' },
-    { id: 'tonkotsu', label: '豚骨ホームラン', type: 'profile' },
-    { id: 'others', label: 'Others', type: 'upcoming' }
-  ];
-
   const NO_IMAGE = 'assets/images/no-image.png';
-  const categoryButtons = document.querySelectorAll('.works-filters button[data-category]');
-  const workList = document.getElementById('work-list');
-  const workDetail = document.getElementById('work-detail');
-  const contactForm = document.getElementById('contact-form');
-  const state = { category: 'music', slug: null };
-
-  const findWorkBySlug = (slug) => {
-    for (const [category, items] of Object.entries(worksData)) {
-      const match = items.find((item) => item.slug === slug);
-      if (match) {
-        return { category, item: match };
-      }
-    }
-    return null;
-  };
-
-  const setActiveCategoryButton = (categoryId) => {
-    categoryButtons.forEach((btn) => {
-      const isActive = btn.dataset.category === categoryId;
-      btn.setAttribute('aria-selected', String(isActive));
-    });
-  };
-
-  const renderWorksList = () => {
-    const category = categories.find((entry) => entry.id === state.category);
-    if (!category || !workList) return;
-
-    workList.innerHTML = '';
-    workList.classList.toggle('works-list--grid', category.type === 'list');
-
-    if (category.type === 'list') {
-      const items = worksData[state.category] || [];
-      if (!items.length) {
-        workList.innerHTML = '<div class="placeholder-card">Upcoming</div>';
-        return;
-      }
-
-      const fragment = document.createDocumentFragment();
-      items.forEach((item) => {
-        const article = document.createElement('article');
-        article.className = 'works-card';
-        if (state.slug === item.slug) {
-          article.classList.add('works-card--active');
-        }
-
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.dataset.work = item.slug;
-
-        const title = document.createElement('p');
-        title.className = 'works-card__title';
-        title.textContent = item.title;
-
-        const meta = document.createElement('p');
-        meta.className = 'works-card__meta';
-        meta.textContent = `${item.year} · ${item.location}`;
-
-        button.append(title, meta);
-        article.append(button);
-        fragment.append(article);
-      });
-
-      workList.append(fragment);
-    } else if (category.type === 'profile') {
-      workList.classList.remove('works-list--grid');
-      workList.innerHTML = `
-        <article class="works-card">
-          <div class="tonkotsu-visual">
-            <img src="assets/images/works/tonkotsu.jpg" alt="Tonkotsu homerun placeholder">
-          </div>
-          <p class="works-card__title">豚骨ホームラン</p>
-          <p class="works-card__meta">Photo + Profile space</p>
-          <div class="placeholder-card" style="margin-top:0.5rem">Upcoming</div>
-        </article>
-      `;
-    } else {
-      workList.classList.remove('works-list--grid');
-      workList.innerHTML = '<div class="placeholder-card">Upcoming</div>';
-    }
-  };
-
-  const renderWorkDetail = () => {
-    if (!workDetail) return;
-    const detailBody = workDetail.querySelector('.works-detail__body');
-    if (!detailBody) return;
-
-    if (!state.slug) {
-      detailBody.innerHTML = '<p>作品を選択すると詳細がここに表示されます。</p>';
-      return;
-    }
-
-    const match = findWorkBySlug(state.slug);
-    if (!match) {
-      detailBody.innerHTML = '<p>対象の作品が見つかりません。</p>';
-      return;
-    }
-
-    const { item } = match;
-    const imageSrc = item.image || NO_IMAGE;
-    detailBody.innerHTML = `
-      <img src="${imageSrc}" alt="${item.title} thumbnail" onerror="this.onerror=null;this.src='${NO_IMAGE}'">
-      <h3>${item.title}</h3>
-      <p>${item.year} / ${item.location}</p>
-      <p>${item.description}</p>
-    `;
-  };
-
-  const setCategory = (categoryId, { scroll = false, resetDetail = false } = {}) => {
-    if (!categories.some((entry) => entry.id === categoryId)) return;
-    state.category = categoryId;
-    if (resetDetail || !['music', 'art'].includes(categoryId)) {
-      state.slug = null;
-    }
-    setActiveCategoryButton(categoryId);
-    renderWorksList();
-    renderWorkDetail();
-    if (scroll) {
-      document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const setDetailSlug = (slug) => {
-    const match = findWorkBySlug(slug);
-    if (!match) {
-      state.slug = null;
-      renderWorkDetail();
-      return;
-    }
-    state.category = match.category;
-    state.slug = slug;
-    setActiveCategoryButton(state.category);
-    renderWorksList();
-    renderWorkDetail();
-  };
-
-  const handleWorkListClicks = () => {
-    workList?.addEventListener('click', (event) => {
-      const button = event.target.closest('button[data-work]');
-      if (!button) return;
-      const slug = button.dataset.work;
-      if (slug) {
-        const targetHash = `#works/${slug}`;
-        if (window.location.hash === targetHash) {
-          handleHashChange();
-        } else {
-          window.location.hash = targetHash;
-        }
-      }
-    });
-  };
-
-  const handleCategoryClicks = () => {
-    categoryButtons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const categoryId = btn.dataset.category;
-        if (categoryId) {
-          const targetHash = `#works/${categoryId}`;
-          if (window.location.hash === targetHash) {
-            handleHashChange();
-          } else {
-            window.location.hash = targetHash;
-          }
-        }
-      });
-    });
-  };
-
-  const scrollToWorks = () => {
-    const worksSection = document.getElementById('works');
-    worksSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
-  const handleHashChange = () => {
-    const hash = window.location.hash.replace(/^#/, '');
-    const [section, value] = hash.split('/').filter(Boolean);
-
-    if (section === 'works') {
-      if (!value) {
-        setCategory('music');
-        state.slug = null;
-        renderWorkDetail();
-        scrollToWorks();
-        return;
-      }
-
-      if (categories.some((entry) => entry.id === value)) {
-        setCategory(value, { resetDetail: true });
-        scrollToWorks();
-        return;
-      }
-
-      const target = findWorkBySlug(value);
-      if (target) {
-        setDetailSlug(value);
-        scrollToWorks();
-        return;
-      }
-
-      // fallback
-      setCategory('music', { resetDetail: true });
-      scrollToWorks();
-      return;
-    }
-
-    if (section) {
-      const element = document.getElementById(section);
-      element?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const pageContext = document.body?.dataset.page || '';
 
   const setupMenuSheet = () => {
     const menuButton = document.querySelector('.menu-toggle');
@@ -260,12 +43,12 @@
 
     let lastFocusedElement = null;
 
-    const getFocusableElements = () =>
+    const getFocusable = () =>
       sheet.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
 
     const trapFocus = (event) => {
       if (event.key !== 'Tab') return;
-      const focusable = getFocusableElements();
+      const focusable = getFocusable();
       if (!focusable.length) return;
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
@@ -295,7 +78,7 @@
       overlay.hidden = false;
       menuButton.setAttribute('aria-expanded', 'true');
       sheet.addEventListener('keydown', trapFocus);
-      const firstFocusable = getFocusableElements()[0];
+      const firstFocusable = getFocusable()[0];
       firstFocusable?.focus();
     };
 
@@ -309,16 +92,7 @@
 
     overlay.addEventListener('click', closeSheet);
     closeButton.addEventListener('click', closeSheet);
-    sheet.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', closeSheet);
-    });
-
-    sheet.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        event.preventDefault();
-        closeSheet();
-      }
-    });
+    sheet.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeSheet));
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && !sheet.hidden) {
@@ -327,17 +101,99 @@
     });
   };
 
-  const setupContactForm = () => {
-    if (!contactForm) return;
-    const statusEl = contactForm.querySelector('.contact-form__status');
+  const setupWorksPage = () => {
+    const context = document.querySelector('[data-works-context]');
+    const workList = document.getElementById('work-list');
+    const workDetail = document.getElementById('work-detail');
+    if (!context || !workList || !workDetail) return;
 
-    contactForm.addEventListener('submit', (event) => {
+    const type = context.getAttribute('data-works-context');
+    const dataset = worksData[type] || [];
+    const detailBody = workDetail.querySelector('.works-detail__body');
+
+    const renderDetail = (slug) => {
+      const item = dataset.find((entry) => entry.slug === slug);
+      if (!item) {
+        detailBody.innerHTML = '<p>作品を選択すると詳細が表示されます。</p>';
+        return;
+      }
+
+      const image = item.image || NO_IMAGE;
+      detailBody.innerHTML = `
+        <img src="${image}" alt="${item.title} thumbnail" onerror="this.onerror=null;this.src='${NO_IMAGE}'">
+        <h3>${item.title}</h3>
+        <p>${item.year} / ${item.location}</p>
+        <p>${item.description}</p>
+      `;
+    };
+
+    const renderList = () => {
+      if (!dataset.length) {
+        workList.innerHTML = '<div class="placeholder-card">Upcoming</div>';
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+      dataset.forEach((item, index) => {
+        const article = document.createElement('article');
+        article.className = 'works-card';
+        if (index === 0) article.classList.add('works-card--active');
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.dataset.work = item.slug;
+
+        const title = document.createElement('p');
+        title.className = 'works-card__title';
+        title.textContent = item.title;
+
+        const meta = document.createElement('p');
+        meta.className = 'works-card__meta';
+        meta.textContent = `${item.year} · ${item.location}`;
+
+        button.append(title, meta);
+        article.append(button);
+        fragment.append(article);
+      });
+
+      workList.innerHTML = '';
+      workList.append(fragment);
+    };
+
+    const setActive = (slug) => {
+      workList.querySelectorAll('.works-card').forEach((card) => {
+        const button = card.querySelector('button[data-work]');
+        const isActive = button?.dataset.work === slug;
+        card.classList.toggle('works-card--active', isActive);
+      });
+    };
+
+    renderList();
+    const defaultSlug = dataset[0]?.slug;
+    if (defaultSlug) {
+      renderDetail(defaultSlug);
+    }
+
+    workList.addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-work]');
+      if (!button) return;
+      const slug = button.dataset.work;
+      setActive(slug);
+      renderDetail(slug);
+    });
+  };
+
+  const setupContactForm = () => {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+    const statusEl = form.querySelector('.contact-form__status');
+
+    form.addEventListener('submit', (event) => {
       event.preventDefault();
-      const formData = new FormData(contactForm);
+      const formData = new FormData(form);
       const name = (formData.get('name') || '').trim();
       const email = (formData.get('email') || '').trim();
       const message = (formData.get('message') || '').trim();
-
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       let error = '';
 
@@ -357,19 +213,18 @@
       statusEl.textContent = '送信機能は後日実装予定です。';
       statusEl.classList.remove('is-error');
       statusEl.classList.add('is-success');
-      contactForm.reset();
+      form.reset();
     });
   };
 
   const init = () => {
-    setCategory(state.category);
-    renderWorkDetail();
-    handleWorkListClicks();
-    handleCategoryClicks();
     setupMenuSheet();
-    setupContactForm();
-    window.addEventListener('hashchange', handleHashChange);
-    handleHashChange();
+    if (pageContext.startsWith('works-')) {
+      setupWorksPage();
+    }
+    if (pageContext === 'contact') {
+      setupContactForm();
+    }
   };
 
   if (document.readyState !== 'loading') {
