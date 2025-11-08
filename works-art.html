@@ -3,83 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Works / Art | 戸田</title>
-  <meta name="description" content="Art works overview.">
-  <script>document.documentElement.classList.add('js');</script>
+  <title>Art Work | 戸田</title>
+  <meta name="description" content="Single art work photo">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body class="site" data-page="works-art">
+<body class="site">
   <header class="global-header">
     <div class="global-header__inner">
       <a class="brandmark" href="index.html">TODA</a>
-      <nav class="primary-nav" aria-label="主要ナビゲーション">
+      <nav class="primary-nav" aria-label="main navigation">
         <a href="profile.html">Profile</a>
-        <a href="works-music.html">Works / Music</a>
-        <a href="works-art.html" aria-current="page">Works / Art</a>
-        <a href="papers.html">Papers</a>
-        <a href="patents.html">Patents</a>
-        <a href="tonkotsu.html">豚骨ホームラン</a>
-        <a href="others.html">Others</a>
-        <a href="schedule.html">Schedule</a>
+        <a href="works-music.html">Music</a>
+        <a href="works-art.html" aria-current="page">Art</a>
         <a href="listen.html">Listen</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <button class="menu-toggle" type="button" aria-label="メニュー" aria-controls="mobile-menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
   </header>
 
   <main class="page">
-    <section class="page-section">
-      <div class="section-heading">
-        <p class="eyebrow">Works</p>
-        <h1>Art Catalog</h1>
-        <p>アート作品カードをクリックすると詳細ペインが更新されます（プレースホルダ）。</p>
-      </div>
-      <div class="works-layout" data-works-context="art">
-        <div class="works-list" id="work-list" aria-live="polite">
-          <div class="placeholder-card">Loading works…</div>
-        </div>
-        <aside class="works-detail" id="work-detail" aria-live="polite">
-          <p class="works-detail__label">Detail</p>
-          <div class="works-detail__body">
-            <p>作品を選択すると詳細がここに表示されます。</p>
-          </div>
-        </aside>
-      </div>
-    </section>
+    <figure>
+      <img src="assets/images/works/atlas.jpg" alt="Atlas art work">
+      <figcaption>Atlas / 2022 / Berlin</figcaption>
+    </figure>
+    <p class="description">
+      位置情報で映像が変化するミックスメディア作品です。
+    </p>
   </main>
 
   <footer class="global-footer">
-    <div class="global-footer__inner">
-      <p>© 2025 戸田. All rights reserved.</p>
-    </div>
+    <p>© 2025 戸田.</p>
   </footer>
-
-  <div class="sheet-overlay" data-sheet-overlay hidden></div>
-  <div class="bottom-sheet" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title" aria-hidden="true" hidden>
-    <div class="bottom-sheet__header">
-      <p id="mobile-menu-title">Menu</p>
-      <button type="button" data-sheet-close aria-label="閉じる">×</button>
-    </div>
-    <nav class="bottom-sheet__nav">
-      <a href="index.html">Home</a>
-      <a href="profile.html">Profile</a>
-      <a href="works-music.html">Works / Music</a>
-      <a href="works-art.html" aria-current="page">Works / Art</a>
-      <a href="papers.html">Papers</a>
-      <a href="patents.html">Patents</a>
-      <a href="tonkotsu.html">豚骨ホームラン</a>
-      <a href="others.html">Others</a>
-      <a href="schedule.html">Schedule</a>
-      <a href="listen.html">Listen</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-
-  <script src="assets/main.js" defer></script>
 </body>
 </html>
