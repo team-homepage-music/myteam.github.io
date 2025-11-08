@@ -153,24 +153,6 @@ img {
   background: var(--surface-alt);
 }
 
-.link-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-}
-
-.link-card {
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 1rem;
-  background: var(--surface-alt);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .section-heading {
   margin-bottom: 1.5rem;
 }
