@@ -68,7 +68,7 @@
       block.innerHTML = renderMarkdown(markdown);
     } catch (error) {
       console.error(error);
-      block.innerHTML = '<p class="markdown-block__error">自己紹介文を読み込めませんでした。</p>';
+      block.innerHTML = '<p class="markdown-block__error">コンテンツを読み込めませんでした。</p>';
     }
   }
 
@@ -125,9 +125,58 @@
   }
 
   function formatInline(text) {
-    const safeText = typeof text === 'string' ? text : '';
-    const escaped = escapeHtml(safeText);
-    return escaped
+    if (typeof text !== 'string' || !text) {
+      return '';
+    }
+
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    let result = '';
+    let lastIndex = 0;
+    let match;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+      result += applyEmphasis(escapeHtml(text.slice(lastIndex, match.index)));
+      result += renderLink(match[1], match[2]);
+      lastIndex = match.index + match[0].length;
+    }
+
+    result += applyEmphasis(escapeHtml(text.slice(lastIndex)));
+    return result;
+  }
+
+  function renderLink(label, url) {
+    const safeUrl = sanitizeUrl(url);
+    if (!safeUrl) {
+      return applyEmphasis(escapeHtml(label || ''));
+    }
+
+    const isExternal = /^https?:/i.test(safeUrl);
+    const attrs = [`href="${safeUrl}"`];
+
+    if (isExternal) {
+      attrs.push('target="_blank"', 'rel="noopener noreferrer"');
+    }
+
+    const content = applyEmphasis(escapeHtml(label || ''));
+    return `<a ${attrs.join(' ')}>${content}</a>`;
+  }
+
+  function sanitizeUrl(url) {
+    if (typeof url !== 'string') {
+      return '';
+    }
+    const trimmed = url.trim();
+    if (!trimmed || /^(javascript|data):/i.test(trimmed)) {
+      return '';
+    }
+    return escapeHtml(trimmed);
+  }
+
+  function applyEmphasis(str) {
+    if (!str) {
+      return '';
+    }
+    return str
       .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
       .replace(/\*(.+?)\*/g, '<em>$1</em>');
   }
