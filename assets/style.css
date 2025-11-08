@@ -278,6 +278,68 @@ img {
   color: var(--muted);
 }
 
+.markdown-panel {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px dashed var(--line);
+  border-radius: 22px;
+  background: rgba(5, 7, 15, 0.85);
+}
+
+.markdown-panel h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.markdown-block {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.markdown-block p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.markdown-block h1,
+.markdown-block h2,
+.markdown-block h3,
+.markdown-block h4,
+.markdown-block h5,
+.markdown-block h6 {
+  margin: 1rem 0 0.2rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.markdown-block h1:first-child,
+.markdown-block h2:first-child,
+.markdown-block h3:first-child,
+.markdown-block h4:first-child,
+.markdown-block h5:first-child,
+.markdown-block h6:first-child {
+  margin-top: 0;
+}
+
+.markdown-block ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--text);
+}
+
+.markdown-block li + li {
+  margin-top: 0.4rem;
+}
+
+.markdown-block__error {
+  color: var(--accent);
+}
+
 .timeline {
   margin: 0;
   padding: 0;
