@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'ja' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}">
+  {% endif %}
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body class="site">
+  <header class="global-header">
+    <div class="global-header__inner">
+      <a class="brandmark" href="{{ '/index.html' | relative_url }}">TODA</a>
+      <nav class="primary-nav" aria-label="main navigation">
+        <a href="{{ '/profile.html' | relative_url }}"{% if page.nav_current == 'profile' %} aria-current="page"{% endif %}>Profile</a>
+        <div class="nav-item nav-has-submenu">
+          <span tabindex="0">Music</span>
+          <div class="nav-submenu">
+            <a href="{{ '/music-work-1.html' | relative_url }}"{% if page.subnav_current == 'music-1' %} aria-current="page"{% endif %}>作品①</a>
+            <a href="{{ '/music-work-2.html' | relative_url }}"{% if page.subnav_current == 'music-2' %} aria-current="page"{% endif %}>作品②</a>
+          </div>
+        </div>
+        <div class="nav-item nav-has-submenu">
+          <span tabindex="0">Art</span>
+          <div class="nav-submenu">
+            <a href="{{ '/art-work-1.html' | relative_url }}"{% if page.subnav_current == 'art-1' %} aria-current="page"{% endif %}>作品①</a>
+            <a href="{{ '/art-work-2.html' | relative_url }}"{% if page.subnav_current == 'art-2' %} aria-current="page"{% endif %}>作品②</a>
+          </div>
+        </div>
+        <a href="{{ '/papers.html' | relative_url }}"{% if page.nav_current == 'papers' %} aria-current="page"{% endif %}>Papers</a>
+        <a href="{{ '/patents.html' | relative_url }}"{% if page.nav_current == 'patents' %} aria-current="page"{% endif %}>Patents</a>
+        <a href="{{ '/schedule.html' | relative_url }}"{% if page.nav_current == 'schedule' %} aria-current="page"{% endif %}>Schedule</a>
+        <a href="{{ '/tonkotsu.html' | relative_url }}"{% if page.nav_current == 'tonkotsu' %} aria-current="page"{% endif %}>豚骨ホームラン</a>
+        <a href="{{ '/listen.html' | relative_url }}"{% if page.nav_current == 'listen' %} aria-current="page"{% endif %}>Listen</a>
+        <a href="{{ '/contact.html' | relative_url }}"{% if page.nav_current == 'contact' %} aria-current="page"{% endif %}>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="{{ page.main_classes | default: 'page' }}">
+    {{ content }}
+  </main>
+
+  <footer class="global-footer">
+    <p>© 2025 Masato Toda. All rights reserved.</p>
+  </footer>
+</body>
+</html>

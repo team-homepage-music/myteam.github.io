@@ -1,0 +1,167 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+  color: #111;
+  background-color: #f7f7f7;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f7f7f7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.site {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.global-header {
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+.global-header__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brandmark {
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.primary-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  font-size: 0.85rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-has-submenu > span {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  user-select: none;
+}
+
+.nav-has-submenu > span::after {
+  content: "▾";
+  font-size: 0.7rem;
+}
+
+.nav-submenu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  min-width: 160px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  display: none;
+  flex-direction: column;
+  padding: 0.4rem 0;
+  z-index: 20;
+}
+
+.nav-has-submenu:hover .nav-submenu,
+.nav-has-submenu:focus-within .nav-submenu {
+  display: flex;
+}
+
+.nav-submenu a {
+  padding: 0.4rem 0.9rem;
+  white-space: nowrap;
+}
+
+.menu-toggle,
+.sheet-overlay,
+.bottom-sheet {
+  display: none;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 4rem;
+  flex: 1;
+}
+
+figure {
+  margin: 0 auto 2.5rem;
+  max-width: 640px;
+}
+
+figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.description {
+  margin: 0 auto;
+  max-width: 720px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.7;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.description__block {
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #d5d5d5;
+}
+
+.description__block:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.gallery {
+  display: grid;
+  gap: 2rem;
+}
+
+.global-footer {
+  border-top: 1px solid #e0e0e0;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+  background: #fff;
+}
