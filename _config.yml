@@ -2,3 +2,10 @@ title: 戸田
 description: Simple landing with minimal copy.
 lang: ja
 markdown: kramdown
+
+defaults:
+  - scope:
+      path: "content"
+      type: "pages"
+    values:
+      permalink: "/:basename:output_ext"

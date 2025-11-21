@@ -1,0 +1,7 @@
+default: true
+front_matter: true
+MD013: false  # Allow long lines (needed for inline HTML/ja text)
+MD033: false  # Allow inline HTML used for layout
+MD041: false  # No forced first heading; pages start with HTML/layout
+ignores:
+  - _site/**
